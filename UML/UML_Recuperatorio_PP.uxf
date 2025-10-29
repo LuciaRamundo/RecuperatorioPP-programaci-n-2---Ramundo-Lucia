@@ -1,0 +1,89 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>462</y><w>252</w><h>105</h></coordinates><panel_attributes>Fabricante
+--
+- nombre: String
+- ciudad: String
+- antiguedad: int
+--
++ Fabricante(nombre: String, ciudad: String, antiguedad: int)
+--
++ sonIguales(Fabricante, Fabricante): boolean
+- getInfoFabricante(): String
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>84</x><y>245</y><w>497</w><h>175</h></coordinates><panel_attributes>Producto
+--
+# fabricante: Fabricante
+# nombre: String
+# precio: double
+# calorias: int.
+# tiempoPreparacion: int
+# generadorAleatorio: Random (de clase)
+--
++ Producto (nombre: String, precio: double, fabricante: Fabricante)
++ Producto (nombre: String, precio: double, nombreFabricante: String, ciudadFabricante: String, antiguedadFabricante: int)
+--
++ getCalorias(): int
++ getTiempoPreparacion(): int 
+- mostrar(Producto)
+- sonIguales(Producto, Producto): boolean 
++ equals(Object): boolean
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>308</x><y>483</y><w>161</w><h>77</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt; 
+--
+IVendible
+--
++ getPrecioTotal(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>672</x><y>217</y><w>91</w><h>91</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+
+TipoPizza
+--
++ NAPOLITANA
++ MUZZARELLA
++ CALABRESA</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>784</x><y>224</y><w>91</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+
+TamanoPizza
+--
++ CHICA
++ MEDIANA
++ GRANDE</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>826</x><y>490</y><w>91</w><h>91</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+
+TipoPostre
+--
++ TIRAMISU
++ HELADO
++ FLAN</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>462</x><y>91</y><w>91</w><h>91</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+
+TipoProducto
+--
++ PIZZAS
++ POSTRES
++ TODOS</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>637</x><y>371</y><w>217</w><h>98</h></coordinates><panel_attributes>Pizza
+--
+- sabor: TipoPizza
+- tamano: TamanoPizza
+--
++ Pizza(sabor: TipoPizza, tamano: TamanoPizza)
+--
++ getPrecioTotal() : double
++ toString() : String
++ equals(Object): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>546</x><y>504</y><w>238</w><h>84</h></coordinates><panel_attributes>Postre
+--
+- tipoPostre: TipoPostre
+--
++ Postre(tipoPostre: TipoPostre)
+--
++ getPrecioTotal() : double
++ toString() : String
++ equals(Object): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>140</x><y>0</y><w>259</w><h>168</h></coordinates><panel_attributes>Pizzeria
+--
+- nombre: String.
+- capacidad: int.
+- productos: Collection&lt;Producto&gt;
+--
++ Pizzeria(String)
++ Pizzeria(String, int)
+--
+- sonIguales(Producto) : boolean
++ agregar(Producto): void
+- getPrecioProductos(TipoProducto) : double
+- getPrecioDePizzas() : double
+- getPrecioDePostres() : double
+- getPrecioTotal() : double
++ iterator() : Iterator&lt;Producto&gt;
++ toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>119</x><y>413</y><w>28</w><h>63</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>20;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>539</x><y>413</y><w>56</w><h>105</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>60;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>574</x><y>301</y><w>91</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>385</x><y>413</y><w>21</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>462</x><y>539</y><w>98</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>120;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>469</x><y>427</y><w>182</w><h>91</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>240;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>238</x><y>161</y><w>21</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>721</x><y>301</y><w>21</w><h>84</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>819</x><y>301</y><w>21</w><h>84</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>777</x><y>546</y><w>63</w><h>21</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>497</x><y>175</y><w>21</w><h>84</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element></diagram>
